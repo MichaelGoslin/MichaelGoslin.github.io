@@ -369,6 +369,126 @@
   }
   .diagram svg{ width:100%; max-width:280px; height:auto; }
 
+  /* Contact */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:40px;
+    align-items:stretch;
+  }
+  .contact-card{
+    background:var(--card);
+    border-radius:24px;
+    padding:40px 34px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+  }
+  .contact-card h3{ font-size:1.3rem; margin-bottom:2px; }
+  .contact-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    text-decoration:none;
+    color:var(--text);
+  }
+  .contact-item .icon-badge{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--peach-card);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    color:var(--coral-deep);
+  }
+  .contact-item .icon-badge svg{ width:20px; height:20px; }
+  .contact-item .label{
+    font-size:0.72rem;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:var(--text-soft);
+    font-weight:700;
+    margin-bottom:2px;
+  }
+  .contact-item .value{
+    font-size:0.98rem;
+    font-weight:500;
+    transition:color var(--transition);
+  }
+  .contact-item:hover .value{ color:var(--coral-deep); }
+
+  .contact-form{
+    background:var(--card);
+    border-radius:24px;
+    padding:40px 34px;
+    border:1px solid var(--line);
+    box-shadow:var(--shadow);
+  }
+  .contact-form h3{ font-size:1.3rem; margin-bottom:22px; }
+  .form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+    margin-bottom:16px;
+  }
+  .field{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    margin-bottom:16px;
+  }
+  .field label{
+    font-size:0.78rem;
+    font-weight:600;
+    color:var(--text-soft);
+  }
+  .field input, .field textarea{
+    font-family:'Inter', sans-serif;
+    font-size:0.94rem;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid var(--line);
+    background:var(--bg);
+    color:var(--text);
+    outline:none;
+    transition:border-color var(--transition), background var(--transition);
+    resize:vertical;
+  }
+  .field input:focus, .field textarea:focus{
+    border-color:var(--coral);
+  }
+  .send-btn{
+    font-family:'Inter', sans-serif;
+    font-size:0.95rem;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(145deg, var(--coral), var(--coral-deep));
+    border:none;
+    border-radius:12px;
+    padding:13px 28px;
+    cursor:pointer;
+    transition:transform var(--transition), box-shadow var(--transition);
+    width:100%;
+  }
+  .send-btn:hover{ transform:translateY(-2px); box-shadow:var(--shadow); }
+  .form-note{
+    margin-top:14px;
+    font-size:0.82rem;
+    color:var(--text-soft);
+    text-align:center;
+    min-height:1.2em;
+  }
+  .form-note.success{ color:var(--coral-deep); font-weight:600; }
+
+  @media (max-width:860px){
+    .contact-grid{ grid-template-columns:1fr; }
+    .form-row{ grid-template-columns:1fr; }
+  }
+
   footer{
     padding:40px 0;
     text-align:center;
@@ -407,6 +527,7 @@
       <a href="#journey" class="hide-mobile">Journey</a>
       <a href="#mission" class="hide-mobile">Mission</a>
       <a href="#projects" class="hide-mobile">Projects</a>
+      <a href="#contact" class="hide-mobile">Contact</a>
       <button class="toggle" id="themeToggle" aria-label="Toggle dark mode">
         <span class="knob" id="knob">☀</span>
       </button>
@@ -519,6 +640,58 @@
       </div>
     </div>
   </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="tag">Get In Touch</span>
+        <h2>Let's connect</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact Info</h3>
+          <a class="contact-item" href="mailto:Michael.goslin@pursuit.org">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 6l9 7 9-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="2"/></svg>
+            </span>
+            <span>
+              <span class="label">Email</span><br>
+              <span class="value">Michael.goslin@pursuit.org</span>
+            </span>
+          </a>
+          <a class="contact-item" href="tel:+13473605842">
+            <span class="icon-badge">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>
+              <span class="label">Phone</span><br>
+              <span class="value">(347) 360-5842</span>
+            </span>
+          </a>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <h3>Send a Message</h3>
+          <div class="form-row">
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" rows="5" placeholder="What's on your mind?" required></textarea>
+          </div>
+          <button class="send-btn" type="submit">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
@@ -540,6 +713,15 @@
 
   toggleBtn.addEventListener('click', () => {
     applyTheme(!root.classList.contains('dark'));
+  });
+
+  const contactForm = document.getElementById('contactForm');
+  const formNote = document.getElementById('formNote');
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formNote.textContent = "Thanks! Your message has been noted — I'll get back to you soon.";
+    formNote.classList.add('success');
+    contactForm.reset();
   });
 </script>
 
